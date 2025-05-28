@@ -1,0 +1,43 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+
+module.exports = {
+  entry: './src/index.tsx',
+  mode: 'development',
+  devServer: {
+	port: 3002,
+	historyApiFallback: true
+  },
+  output: {
+	publicPath: 'auto'
+  },
+  resolve: {
+	extensions: ['.tsx', '.ts', '.js']
+  },
+  module: {
+	rules: [
+	  {
+		test: /\.tsx?$/,
+		loader: 'ts-loader',
+		exclude: /node_modules/
+	  }
+	]
+  },
+  plugins: [
+	new ModuleFederationPlugin({
+	  name: 'criptoApp',
+	  filename: 'remoteEntry.js',
+	  exposes: {
+		'./CriptoModule': './src/components/CriptoModule'
+	  },
+	  shared: {
+		react: { singleton: true, requiredVersion: '^18.2.0' },
+		'react-dom': { singleton: true, requiredVersion: '^18.2.0' }
+	  }
+	}),
+	new HtmlWebpackPlugin({
+	  template: './public/index.html'
+	})
+  ]
+};
