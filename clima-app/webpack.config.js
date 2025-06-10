@@ -29,7 +29,7 @@ module.exports = {
       name: 'climaApp',
       filename: 'remoteEntry.js',
       exposes: {
-        './ClimaModule': './src/components/ClimaModule'
+        './App': './src/App',
       },
       shared: {
         react: { singleton: true, requiredVersion: '^18.2.0' },

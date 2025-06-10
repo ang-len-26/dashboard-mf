@@ -1,8 +1,9 @@
 import React, { Suspense } from "react";
 import ErrorBoundary from "../components/ErrorBoundary";
+import { ThemeProvider } from "../context/ThemeContext";
 
-const ClimaApp = React.lazy(() => import("climaApp/ClimaModule"));
-const CriptoApp = React.lazy(() => import("criptoApp/CriptoModule"));
+const ClimaApp = React.lazy(() => import("climaApp/App"));
+const CriptoApp = React.lazy(() => import("criptoApp/App"));
 const AuthApp = React.lazy(() => import("authApp/AuthModule"));
 
 const Dashboard = () => {
@@ -16,7 +17,9 @@ const Dashboard = () => {
 
       <Suspense fallback={<p>Cargando módulo de cripto...</p>}>
         <ErrorBoundary>
-          <CriptoApp />
+          <ThemeProvider>
+            <CriptoApp />
+          </ThemeProvider>
         </ErrorBoundary>
       </Suspense>
 

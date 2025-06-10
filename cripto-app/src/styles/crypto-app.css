@@ -1,0 +1,148 @@
+/* Tema global por data-theme */
+:root {
+  --bg: #f5f7fa;
+  --text: #333;
+  --card-bg: #ffffff;
+  --accent: #4bc0c0;
+  --hover: #3aa5a5;
+}
+
+[data-theme='dark'] {
+  --bg: #1f1f1f;
+  --text: #f0f0f0;
+  --card-bg: #2a2a2a;
+  --accent: #4bc0c0;
+  --hover: #3aa5a5;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Contenedor principal del microfrontend */
+.crypto-app-container {
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Header con toggle */
+.crypto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.theme-toggle {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+  background: var(--hover);
+}
+
+.crypto-app {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  padding: 1rem;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Filtro */
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.filterContainer button {
+  background-color: #4bc0c0;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filterContainer button:hover {
+  background-color: #3aa5a5;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modalContent h3 {
+  margin-bottom: 1rem;
+}
+
+.modalContent select,
+.modalContent input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modalContent button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #4bc0c0;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modalContent button:hover {
+  background-color: #3aa5a5;
+}
+
+/* Días */
+.modalContent .day-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import AuthModule from "./components/AuthModule";
+import AuthModule from "./pages/AuthModule";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

@@ -1,11 +1,11 @@
-declare module 'climaApp/ClimaModule' {
-  const ClimaModule: React.ComponentType;
-  export default ClimaModule;
+declare module 'climaApp/App' {
+  const App: React.ComponentType;
+  export default App;
 }
 
-declare module 'criptoApp/CriptoModule' {
-  const CriptoModule: React.ComponentType;
-  export default CriptoModule;
+declare module 'criptoApp/App' {
+  const App: React.ComponentType;
+  export default App;
 }
 
 declare module 'authApp/AuthModule' {

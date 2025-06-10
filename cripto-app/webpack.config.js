@@ -22,6 +22,11 @@ module.exports = {
 		loader: 'ts-loader',
 		exclude: /node_modules/
 	  }
+	  ,
+	  {
+		test: /\.css$/,
+		use: ['style-loader', 'css-loader']
+	  }
 	]
   },
   plugins: [
@@ -29,7 +34,7 @@ module.exports = {
 	  name: 'criptoApp',
 	  filename: 'remoteEntry.js',
 	  exposes: {
-		'./CriptoModule': './src/components/CriptoModule'
+		'./App': './src/App'
 	  },
 	  shared: {
 		react: { singleton: true, requiredVersion: '^18.2.0' },

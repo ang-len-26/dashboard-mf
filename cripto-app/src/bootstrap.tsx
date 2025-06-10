@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
-import CriptoModule from "./components/CriptoModule";
+import App from "./App";
 
 const root = document.getElementById("root");
 if (root) {
-  ReactDOM.createRoot(root).render(<CriptoModule />);
+  ReactDOM.createRoot(root).render(<App />);
 }

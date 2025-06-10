@@ -28,7 +28,7 @@ module.exports = {
       name: 'authApp',
       filename: 'remoteEntry.js',
       exposes: {
-        './AuthModule': './src/components/AuthModule'
+        './AuthModule': './src/pages/AuthModule'
       },
       shared: {
         react: { singleton: true, requiredVersion: '^18.3.1' },
