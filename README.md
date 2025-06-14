@@ -1,26 +1,54 @@
-# Dashboard Modular con Micro-Frontends
+# 🧩 Dashboard Modular con Micro-Frontends (Shell)
 
-Este proyecto implementa una arquitectura de micro-frontends usando React, TypeScript, Webpack 5 y Module Federation.
+Este proyecto actúa como el contenedor principal (`shell`) de una arquitectura basada en **Micro-Frontends** utilizando **React**, **TypeScript**, **Webpack 5** y **Module Federation**. Su objetivo es integrar de forma dinámica diferentes módulos funcionales (como clima, criptomonedas y autenticación), ofreciendo una experiencia de usuario unificada y escalable.
 
-## Estructura de los Microfrontends
+## 🚀 ¿Qué hace este módulo?
 
-- `shell/`: Aplicación contenedora que orquesta los módulos.
-- `clima-app/`: Módulo de clima.
-- `cripto-app/`: Módulo de criptomonedas.
-- `auth/`: Módulo de autenticación (en desarrollo).
+El `shell` es responsable de:
 
-## Requisitos
+- Cargar dinámicamente los microfrontends (como clima y cripto).
+- Proporcionar la navegación y el layout común.
+- Compartir estado global (por ejemplo, autenticación).
+- Centralizar configuraciones de estilo o librerías compartidas.
 
-- Node.js (v18.x recomendado)
-- NPM
+## 🛠️ Tecnologías utilizadas
 
-## Instalación y ejecución
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Webpack 5](https://webpack.js.org/)
+- [Module Federation](https://webpack.js.org/concepts/module-federation/)
+- [React Router](https://reactrouter.com/) (opcional)
+- [TailwindCSS](https://tailwindcss.com/) (si lo usas para estilos)
 
-Desde la raíz:
+## 📁 Estructura del proyecto
+
+shell/
+├── public/ # Archivos estáticos
+├── src/
+│ ├── components/ # Componentes compartidos (navbar, layout, etc.)
+│ ├── context/ #
+│ ├── pages/ # Páginas principales del shell
+│ ├── types/ # Tipos TypeScript comunes
+│ └── App.tsx # Componente raíz
+├── webpack.config.js # Configuración Webpack con Module Federation
+└── package.json
+
+## ⚙️ Requisitos
+
+- Node.js `^18.x`
+- NPM `^9.x` o superior
+
+## ▶️ Instrucciones para clonar y ejecutar
+
+Desde la raíz del repositorio:
 
 ```bash
-cd shell && npm install && npm start
-cd ../clima-app && npm install && npm start
-cd ../cripto-app && npm install && npm start
-cd ../auth && npm install && npm start
+# Clona el repositorio
+git clone https://github.com/ang-len-26/dashboard-mf.git
+cd dashboard-mf
+
+# Arranca el shell
+cd shell
+npm install
+npm start
 ```
