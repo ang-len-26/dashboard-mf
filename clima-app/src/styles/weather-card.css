@@ -1,0 +1,144 @@
+/* === Contenedor principal === */
+.weather-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Expansión de altura en modo "Ver más" */
+.weather-header.expanded {
+  min-height: 400px;
+}
+
+/* === Controles === */
+.card-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.card-controls button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* === Contenedor de la tarjeta === */
+.weather-card-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* === Tarjeta === */
+.weather-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.weather-card.expanded {
+  min-height: 300px;
+}
+
+/* === Encabezado de la tarjeta === */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+/* === Valor principal === */
+.card-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* === Botón de más detalles === */
+.details-button {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.details-button:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* === Contenido expandido === */
+.card-details {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* === Estilo para los íconos generales de las tarjetas === */
+.icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: invert(1); /* Asegura visibilidad si el fondo es oscuro */
+}
+
+/* === Estilo para los íconos de navegación (prev, next, expand/collapse) === */
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.nav-icon:hover {
+  transform: scale(1.1);
+}
+
+/* === Fondos por tipo de tarjeta === */
+.bg-sun {
+  background: linear-gradient(135deg, #f9d423, #ff4e50);
+}
+
+.bg-temp {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+
+.bg-humidity {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+.bg-visibility {
+  background: linear-gradient(135deg, #d3cce3, #e9e4f0);
+}
+
+.bg-rain {
+  background: linear-gradient(135deg, #667db6, #0082c8, #0082c8, #667db6);
+}
+
+.bg-wind {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
