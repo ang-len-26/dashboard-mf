@@ -26,14 +26,17 @@ const WeatherCard = ({
         isExpanded ? "expanded" : ""
       }`}
     >
-      <div className="card-header">
-        <div className="icon">{icon}</div>
-        <h3>{title}</h3>
+      <div className="card-content">
+        <div className="card-header">
+          <div className="icon">{icon}</div>
+          <h3>{title}</h3>
+        </div>
+        <div className="card-value">{value}</div>
+        <button className="details-button" onClick={onMoreDetails}>
+          {isExpanded ? "Menos detalles" : "Ver más"}
+        </button>
       </div>
-      <div className="card-value">{value}</div>
-      <button className="details-button" onClick={onMoreDetails}>
-        {isExpanded ? "Menos detalles" : "Ver más"}
-      </button>
+
       {isExpanded && <div className="card-details">{children}</div>}
     </div>
   );

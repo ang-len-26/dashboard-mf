@@ -26,21 +26,23 @@ El módulo de criptomonedas:
 
 ## 📁 Estructura del proyecto
 
-cripto-app/
-├── public/
-├── src/
-│ ├── components/ # Tarjetas, listas o detalles
-│ ├── context/
-│ ├── hooks
-│ ├── pages/
-│ │ └── Home.tsx # Página principal de criptos
-│ ├── services/ # Lógica para consumir API externa
-│ ├── styles/
-│ ├── types/ # Tipos y modelos de datos
-│ ├── utils/
-│ └── App.tsx
-├── webpack.config.js
-└── package.json
+- cripto-app/
+- ├── public/
+- ├── src/
+- │ ├── components/ # Tarjetas, listas o detalles
+- │ ├── context/ # Contextos globales
+- │ ├── hooks # Hooks personalizados, como useCryptoData
+- │ ├── pages/
+- │ │ └── Home.tsx # Página principal de criptos
+- │ ├── services/ # Lógica para consumir API externa
+- │ ├── styles/ # Archivos CSS o módulos de estilos
+- │ ├── types/ # Tipos y modelos de datos
+- │ ├── utils/
+- │ ├── App.tsx # Componente raíz de la aplicación
+- │ ├── bootstrap.tsx # Punto de entrada para inicializar el microfrontend (Module Federation)
+- │ └── index.tsx # Renderizado del microfrontend en el DOM
+- ├── webpack.config.js
+- └── package.json
 
 ## ⚙️ Puerto de desarrollo
 

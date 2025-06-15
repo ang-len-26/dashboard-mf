@@ -1,24 +1,19 @@
 /* === Contenedor principal === */
 .weather-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  transition: all 0.3s ease;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-/* Expansión de altura en modo "Ver más" */
-.weather-header.expanded {
-  min-height: 400px;
+  justify-content: center;
+  gap: 1rem;
 }
 
 /* === Controles === */
 .card-controls {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
 }
 
 .card-controls button {
@@ -42,17 +37,26 @@
 
 /* === Tarjeta === */
 .weather-card {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 1rem;
-  padding: 1.5rem;
+  width: 200px;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
   color: white;
-  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem;
+  position: relative;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .weather-card.expanded {
-  min-height: 300px;
+  width: 460px; /* Se expande lateralmente */
+  height: 140px; /* No cambia de altura */
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 /* === Encabezado de la tarjeta === */
@@ -60,30 +64,27 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.card-header h3 {
-  margin: 0;
-  font-size: 1.25rem;
 }
 
 /* === Valor principal === */
 .card-value {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin: 0.5rem 0;
 }
 
 /* === Botón de más detalles === */
 .details-button {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   color: white;
   border: none;
   padding: 0.4rem 0.8rem;
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background 0.2s ease;
+  align-self: flex-end;
+  font-size: 0.8rem;
+  margin-top: auto;
 }
 
 .details-button:hover {
@@ -92,9 +93,24 @@
 
 /* === Contenido expandido === */
 .card-details {
-  margin-top: 1rem;
+   padding-left: 1rem;
   font-size: 0.95rem;
   line-height: 1.4;
+}
+/* === Botón de expansión/collapsado === */
+.expand-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  align-self: flex-end;
+}
+/* === Contenido de la tarjeta === */
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* === Estilo para los íconos generales de las tarjetas === */

@@ -17,21 +17,20 @@ El `shell` es responsable de:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Webpack 5](https://webpack.js.org/)
 - [Module Federation](https://webpack.js.org/concepts/module-federation/)
-- [React Router](https://reactrouter.com/) (opcional)
-- [TailwindCSS](https://tailwindcss.com/) (si lo usas para estilos)
+- [React Router](https://reactrouter.com/)
 
 ## 📁 Estructura del proyecto
 
-shell/
-├── public/ # Archivos estáticos
-├── src/
-│ ├── components/ # Componentes compartidos (navbar, layout, etc.)
-│ ├── context/ #
-│ ├── pages/ # Páginas principales del shell
-│ ├── types/ # Tipos TypeScript comunes
-│ └── App.tsx # Componente raíz
-├── webpack.config.js # Configuración Webpack con Module Federation
-└── package.json
+- shell/
+- ├── public/ # Archivos estáticos
+- ├── src/
+- │ ├── components/ # Componentes compartidos (navbar, layout, etc.)
+- │ ├── context/ #
+- │ ├── pages/ # Páginas principales del shell
+- │ ├── types/ # Tipos TypeScript comunes
+- │ └── App.tsx # Componente raíz
+- ├── webpack.config.js # Configuración Webpack con Module Federation
+- └── package.json
 
 ## ⚙️ Requisitos
 

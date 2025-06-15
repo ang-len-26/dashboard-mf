@@ -2,30 +2,36 @@ import React, { Suspense } from "react";
 import ErrorBoundary from "../components/ErrorBoundary";
 import { ThemeProvider } from "../context/ThemeContext";
 
-const ClimaApp = React.lazy(() => import("climaApp/App"));
 const CriptoApp = React.lazy(() => import("criptoApp/App"));
-const AuthApp = React.lazy(() => import("authApp/AuthModule"));
 
 const Dashboard = () => {
   return (
-    <main style={{ padding: "1rem" }}>
-      <Suspense fallback={<p>Cargando módulo de clima...</p>}>
-        <ErrorBoundary>
-          <ClimaApp />
-        </ErrorBoundary>
-      </Suspense>
-
-      <Suspense fallback={<p>Cargando módulo de cripto...</p>}>
+    <main
+      style={{
+        padding: "2rem",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "flex-start",
+        minHeight: "calc(100vh - 100px)", // altura menos header
+        backgroundColor: "#f4f4f4",
+      }}
+    >
+      <Suspense fallback={<p>Cargando módulo de criptomonedas...</p>}>
         <ErrorBoundary>
           <ThemeProvider>
-            <CriptoApp />
+            <div
+              style={{
+                width: "100%",
+                maxWidth: "1200px",
+                background: "#fff",
+                borderRadius: "12px",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+                padding: "2rem",
+              }}
+            >
+              <CriptoApp />
+            </div>
           </ThemeProvider>
-        </ErrorBoundary>
-      </Suspense>
-
-      <Suspense fallback={<p>Cargando módulo de autenticación...</p>}>
-        <ErrorBoundary>
-          <AuthApp />
         </ErrorBoundary>
       </Suspense>
     </main>

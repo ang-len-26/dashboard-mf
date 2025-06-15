@@ -28,26 +28,26 @@ El módulo de clima:
 
 ## 📁 Estructura del proyecto
 
-clima-app/
-├── public/
-│ │ └── svg/ # diseño de iconos
-├── src/
-│ ├── components/
-│ │ ├── Cards/ # Tarjetas: Condition, Temperature, etc.
-│ │ ├── icons/
-│ │ └── UI/
-│ ├── context/ # WeatherContext y WeatherDataContext
-│ ├── hooks/ # useWeather
-│ ├── pages/
-│ │ └── Home.tsx # Página principal del clima
-│ ├── services/ # API para obtener datos climáticos
-│ ├── styles/ # diseños .css
-│ ├── types/ # Tipos para datos del clima
-│ ├── App.tsx # Componente raíz
-│ ├── bootstrap.tsx
-│ └── index.tsx #
-├── webpack.config.js # Configuración de Webpack con Module Federation
-└── package.json
+- clima-app/
+- ├── public/
+- │ └── svg/ # Iconos SVG temáticos del clima
+- ├── src/
+- │ ├── components/ # Componentes reutilizables
+- │ │ ├── Cards/ # Tarjetas del clima: ConditionCard, TemperatureCard, etc.
+- │ │ ├── icons/ # Iconos en formato JSX o SVG importados como componentes
+- │ │ └── UI/ # Elementos de interfaz reutilizables (botones, loaders, etc.)
+- │ ├── context/ # Contextos globales: WeatherContext y WeatherDataContext
+- │ ├── hooks/ # Hooks personalizados, como useWeather
+- │ ├── pages/
+- │ │ └── Home.tsx # Página principal que renderiza las tarjetas
+- │ ├── services/ # Lógica de consumo de API (fetchWeather, etc.)
+- │ ├── styles/ # Archivos CSS o módulos de estilos
+- │ ├── types/ # Tipos TypeScript para los datos del clima
+- │ ├── App.tsx # Componente raíz de la aplicación
+- │ ├── bootstrap.tsx # Punto de entrada para inicializar el microfrontend (Module Federation)
+- │ └── index.tsx # Renderizado del microfrontend en el DOM
+- ├── webpack.config.js # Configuración de Webpack con Module Federation
+- └── package.json # Dependencias y scripts del proyecto
 
 ## ⚙️ Puerto de desarrollo
 

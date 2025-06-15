@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: './src/index.tsx',
@@ -27,6 +28,11 @@ module.exports = {
 		test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
 	  }
+	  ,
+      {
+        test: /\.svg$/,
+        type: "asset/resource",
+      },
     ]
   },
   plugins: [
@@ -43,6 +49,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html'
-    })
+    }),
+	  new CopyWebpackPlugin({
+    patterns: [{ from: "public", to: "public" }],
+  }),
   ]
 };

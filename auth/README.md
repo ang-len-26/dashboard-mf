@@ -23,17 +23,20 @@ Este microfrontend maneja el flujo de autenticación de usuarios dentro del sist
 
 ## 📁 Estructura del proyecto
 
-auth/
-├── public/
-├── src/
-│ ├── components/ # Formularios de login, mensajes
-│ ├── pages/
-│ │ └── Login.tsx # Página principal de login
-│ ├── context/ # Manejo del estado de autenticación
-│ ├── services/ # Lógica para autenticación con backend
-│ └── App.tsx
-├── webpack.config.js
-└── package.json
+- auth/
+- ├── public/
+- ├── src/
+- │ ├── components/ # Formularios de login, mensajes
+- │ ├── pages/
+- │ │ └── Login.tsx # Página principal de login
+- │ ├── context/ # Manejo del estado de autenticación
+- │ ├── services/ # Lógica para autenticación con backend
+- │ ├── types/ # Tipos TypeScript
+- │ ├── App.tsx # Componente raíz de la aplicación
+- │ ├── bootstrap.tsx # Punto de entrada para inicializar el microfrontend (Module Federation)
+- │ └── index.tsx # Renderizado del microfrontend en el DOM
+- ├── webpack.config.js
+- └── package.json
 
 ## ⚙️ Puerto de desarrollo
 
