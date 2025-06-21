@@ -4,12 +4,14 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 
 module.exports = {
   entry: './src/index.tsx',
-  mode: 'development',
+  mode: process.env.NODE_ENV || 'development',
   devServer: {
     port: 3003
   },
   output: {
-    publicPath: 'auto'
+	path: path.resolve(__dirname, 'dist'),
+	filename: 'bundle.js',
+	publicPath: 'auto'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']

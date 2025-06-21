@@ -5,13 +5,15 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: './src/index.tsx',
-  mode: 'development',
+  mode: process.env.NODE_ENV || 'development',
   devServer: {
     port: 3001,
     historyApiFallback: true
   },
   output: {
-    publicPath: 'auto'
+  	path: path.resolve(__dirname, 'dist'),
+  	filename: 'bundle.js',
+  	publicPath: 'auto'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
