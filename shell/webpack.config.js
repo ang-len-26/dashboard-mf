@@ -30,9 +30,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'shell',
       remotes: {
-        climaApp: 'climaApp@http://localhost:3001/remoteEntry.js',
-        criptoApp: 'criptoApp@http://localhost:3002/remoteEntry.js',
-        authApp: 'authApp@http://localhost:3003/remoteEntry.js'
+        climaApp: 'climaApp@http://clima-app-orpin.vercel.app/remoteEntry.js',
+        criptoApp: 'criptoApp@http://cripto-app-six.vercel.app/remoteEntry.js',
+        authApp: 'authApp@http://auth-app-beta-seven.vercel.app/remoteEntry.js'
       },
       shared: {
         react: { singleton: true, requiredVersion: '^18.2.0' },
