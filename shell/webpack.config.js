@@ -32,7 +32,7 @@ module.exports = {
       remotes: {
         climaApp: 'climaApp@https://clima-app-orpin.vercel.app/remoteEntry.js',
         criptoApp: 'criptoApp@https://cripto-app-six.vercel.app/remoteEntry.js',
-        authApp: 'authApp@https://auth-app-beta-seven.vercel.app/remoteEntry.js'
+        authApp: 'authApp@http://auth-app-beta-seven.vercel.app/remoteEntry.js'
       },
       shared: {
         react: { singleton: true, requiredVersion: '^18.2.0' },
