@@ -1,10 +1,13 @@
 import "./styles/crypto-app.css";
-import CryptoDashboard from "./pages/CriptoDashboard";
-import CryptoFilter from "./components/CryptoFilter";
-import { CryptoProvider } from "./context/CryptoContext";
-import { CryptoDataProvider } from "./context/CryptoDataProvider";
-import { CryptoMarketProvider } from "./context/CryptoMarketContext";
+import "./components/Sidebar/Sidebar.css";
+
 import { useEffect, useState } from "react";
+import { CryptoProvider } from "./context/CryptoContext";
+import { CryptoMarketProvider } from "./context/CryptoMarketContext";
+import { CryptoDataProvider } from "./context/CryptoDataProvider";
+import { SettingsProvider } from "./context/SettingsContext";
+
+import CriptoDashboard from "./pages/CriptoDashboard";
 
 const getInitialTheme = (): "light" | "dark" => {
   const fromStorage = localStorage.getItem("theme") as "light" | "dark" | null;
@@ -17,6 +20,7 @@ const getInitialTheme = (): "light" | "dark" => {
 
 const App = () => {
   const [theme, setTheme] = useState<"light" | "dark">(getInitialTheme());
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
@@ -25,28 +29,33 @@ const App = () => {
   }, [theme]);
 
   return (
-    <div className={`crypto-app-container ${theme}`}>
+    <SettingsProvider>
       <CryptoProvider>
         <CryptoMarketProvider>
           <CryptoDataProvider>
-            <header className="crypto-header">
-              <h1>📈 Cripto Dashboard</h1>
-              <button
-                className="theme-toggle"
-                onClick={() =>
-                  setTheme((prev) => (prev === "light" ? "dark" : "light"))
-                }
+            <div
+              className={`crypto-app-container ${theme}`}
+              style={{ display: "flex" }}
+            >
+              {/* Contenido desplazado dinámicamente */}
+              <main
+                style={{
+                  marginLeft: isSidebarExpanded ? "220px" : "60px",
+                  padding: "1rem",
+                  flexGrow: 1,
+                  transition: "margin-left 0.3s ease",
+                }}
               >
-                {theme === "light" ? "🌙" : "☀️"}
-              </button>
-            </header>
-
-            <CryptoFilter />
-            <CryptoDashboard />
+                <CriptoDashboard
+                  isSidebarExpanded={isSidebarExpanded}
+                  setIsSidebarExpanded={setIsSidebarExpanded}
+                />
+              </main>
+            </div>
           </CryptoDataProvider>
         </CryptoMarketProvider>
       </CryptoProvider>
-    </div>
+    </SettingsProvider>
   );
 };
 

@@ -66,83 +66,18 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-/* Filtro */
-.filterContainer {
+
+.dashboard-wrapper {
   display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.filterContainer button {
-  background-color: #4bc0c0;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.filterContainer button:hover {
-  background-color: #3aa5a5;
-}
-
-/* Modal */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
+  flex-direction: row;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+  min-height: 100vh;
 }
 
-.modalContent {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.dashboard-content {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
 }
 
-.modalContent h3 {
-  margin-bottom: 1rem;
-}
-
-.modalContent select,
-.modalContent input {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.modalContent button {
-  margin-top: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  background-color: #4bc0c0;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.modalContent button:hover {
-  background-color: #3aa5a5;
-}
-
-/* Días */
-.modalContent .day-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}

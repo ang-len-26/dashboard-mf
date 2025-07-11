@@ -1,22 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
-type CryptoMarketData = {
-  id: string;
-  name: string;
-  current_price: number;
-  market_cap: number;
-  total_volume: number;
-  circulating_supply: number;
-  price_change_percentage_24h: number;
-  ath_change_percentage: number;
-};
+import { CryptoMarket } from "../types";
 
 type CryptoMarketContextType = {
-  cryptos: CryptoMarketData[];
+  cryptos: CryptoMarket[];
   loading: boolean;
 };
 
-const CryptoMarketContext = createContext<CryptoMarketContextType>({
+export const CryptoMarketContext = createContext<CryptoMarketContextType>({
   cryptos: [],
   loading: true,
 });
@@ -34,7 +24,7 @@ export const CryptoMarketProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [cryptos, setCryptos] = useState<CryptoMarketData[]>([]);
+  const [cryptos, setCryptos] = useState<CryptoMarket[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -63,4 +53,12 @@ export const CryptoMarketProvider = ({
   );
 };
 
-export const useCryptoMarket = () => useContext(CryptoMarketContext);
+export const useCryptoMarket = () => {
+  const context = useContext(CryptoMarketContext);
+  if (!context) {
+    throw new Error(
+      "useCryptoMarket debe utilizarse dentro de un CryptoMarketProvider"
+    );
+  }
+  return context;
+};

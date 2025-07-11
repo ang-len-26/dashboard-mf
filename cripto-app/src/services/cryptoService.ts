@@ -52,3 +52,11 @@ export const getCryptoChartData = async (
     total_volumes: result.total_volumes,
   };
 };
+
+export const fetchHistoricalData = async (id: string, days: number) => {
+  const response = await fetch(
+    `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`
+  );
+  const data = await response.json();
+  return data.prices; // [ [timestamp, price], ... ]
+};

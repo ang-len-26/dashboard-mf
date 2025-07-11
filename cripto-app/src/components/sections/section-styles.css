@@ -1,0 +1,271 @@
+.section-container {
+  padding: 1rem;
+}
+
+.top-controls {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.crypto-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.crypto-item {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.crypto-info span {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.compare-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.compare-controls select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-apply {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-close {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-apply:hover {
+  background-color: var(--hover);
+}
+
+.btn-close:hover {
+  background-color: #aaa;
+}
+
+.dashboard-wrapper.blurred .dashboard-content {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modalContent h3 {
+  margin-bottom: 1rem;
+}
+
+.modalContent select,
+.modalContent input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modalContent button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #4bc0c0;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modalContent button:hover {
+  background-color: #3aa5a5;
+}
+
+.modalContent .day-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.day-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: #eee;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.day-btn.active {
+  background-color: #4bc0c0;
+  color: #fff;
+}
+
+.open-modal-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.open-modal-btn:hover {
+  background-color: var(--hover);
+}
+
+.info-help-modal {
+  background: linear-gradient(to bottom right, #ffffff, #f0f4f7);
+  color: var(--text);
+  max-width: 600px;
+  font-size: 0.95rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-section {
+  margin-bottom: 1.2rem;
+}
+
+.modal-section h3 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.modal-section ul {
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.modal-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.modal-section a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.modal-section a:hover {
+  text-decoration: underline;
+}
+
+.close-btn, .close-btn-bottom {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.close-btn:hover,
+.close-btn-bottom:hover {
+  color: var(--hover);
+}
+
+.settings-modal {
+  background: linear-gradient(to bottom right, #fefefe, #eef4f8);
+  max-width: 500px;
+}
+
+.modal-section label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.modal-section select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.apply-settings-btn {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.apply-settings-btn:hover {
+  background-color: var(--hover);
+}

@@ -1,0 +1,94 @@
+/* Sidebar base */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--card-bg);
+  color: var(--text);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+/* Ancho colapsado y expandido */
+.sidebar.expanded {
+  width: 220px;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+/* Botón de colapsar */
+.sidebar-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar-toggle svg {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+}
+
+/* Menú de botones */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+/* Botón de cada ítem */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: inherit;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: var(--hover);
+  color: white;
+}
+
+.sidebar-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Texto visible solo si expandido */
+.sidebar.collapsed .sidebar-item span {
+  display: none;
+}
+
+/* Sección activa */
+.sidebar-item.active {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* Responsive (móvil): sidebar flotante */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1002;
+  }
+}
