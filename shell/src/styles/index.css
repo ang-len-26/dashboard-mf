@@ -1,0 +1,6 @@
+@import "./theme.css";
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}

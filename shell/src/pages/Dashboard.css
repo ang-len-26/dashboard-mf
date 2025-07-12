@@ -1,0 +1,18 @@
+.shell-dashboard {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 70px); /* resta el header fijo */
+  background-color: var(--bg);
+}
+
+.dashboard-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  color: var(--text);
+}

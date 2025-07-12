@@ -22,15 +22,29 @@ El `shell` es responsable de:
 ## 📁 Estructura del proyecto
 
 - shell/
-- ├── public/ # Archivos estáticos
+- ├── public/
 - ├── src/
-- │ ├── components/ # Componentes compartidos (navbar, layout, etc.)
-- │ ├── context/ #
-- │ ├── pages/ # Páginas principales del shell
-- │ ├── types/ # Tipos TypeScript comunes
-- │ └── App.tsx # Componente raíz
-- ├── webpack.config.js # Configuración Webpack con Module Federation
+- │ ├── assets/
+- │ │ └── logo.png
+- │ ├── components/
+- │ │ ├── ErrorBoundary.tsx
+- │ │ ├── Header.tsx
+- │ │ └── ThemeToggle.tsx
+- │ ├── context/
+- │ │ └── ThemeContext.tsx
+- │ ├── styles/
+- │ ├── pages/
+- │ │ └── Dashboard.tsx
+- │ ├── services/
+- │ │ └── theme.css
+- │ ├── types/
+- │ │ └── images.d.ts
+- │ ├── App.tsx
+- │ ├── bootstrap.tsx
+- │ └── index.tsx
+- ├── webpack.config.js
 - └── package.json
+  n
 
 ## ⚙️ Requisitos
 

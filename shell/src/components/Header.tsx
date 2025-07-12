@@ -1,30 +1,20 @@
 import React, { Suspense } from "react";
 import ErrorBoundary from "./ErrorBoundary";
 import { ThemeToggle } from "./ThemeToggle";
+import "./Header.css";
+import logo from "../assets/logo.png";
 
 const ClimaApp = React.lazy(() => import("climaApp/App"));
 const AuthApp = React.lazy(() => import("authApp/AuthModule"));
 
 const Header = () => {
   return (
-    <header
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "1rem 2rem",
-        backgroundColor: "#20232a",
-        color: "white",
-        gap: "1rem",
-      }}
-    >
-      {/* Sección izquierda: título */}
-      <div style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
-        Dashboard Modular
+    <header className="shell-header">
+      <div className="shell-header-title">
+        <img src={logo} alt="Logo" style={{ height: "40px" }} />
       </div>
 
-      {/* Sección central: Clima */}
-      <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+      <div className="shell-header-center">
         <Suspense fallback={<div>Cargando clima...</div>}>
           <ErrorBoundary>
             <ClimaApp />
@@ -32,8 +22,7 @@ const Header = () => {
         </Suspense>
       </div>
 
-      {/* Sección derecha: Tema + Auth */}
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+      <div className="shell-header-right">
         <ThemeToggle />
         <Suspense fallback={<div>Cargando usuario...</div>}>
           <ErrorBoundary>
