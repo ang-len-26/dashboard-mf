@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import ErrorBoundary from "../components/ErrorBoundary";
 import { ThemeProvider } from "../context/ThemeContext";
-import "./Dashboard.css"; // nuevo archivo para estilos
+import "./Dashboard.css";
 
 const CriptoApp = React.lazy(() => import("criptoApp/App"));
 

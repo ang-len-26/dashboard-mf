@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import ErrorBoundary from "./ErrorBoundary";
 import { ThemeToggle } from "./ThemeToggle";
-import "./Header.css";
 import logo from "../assets/logo.png";
+import "./Header.css";
 
 const ClimaApp = React.lazy(() => import("climaApp/App"));
 const AuthApp = React.lazy(() => import("authApp/AuthModule"));
@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="shell-header">
       <div className="shell-header-title">
-        <img src={logo} alt="Logo" style={{ height: "40px" }} />
+        <img src={logo} alt="Logo" style={{ height: "60px" }} />
       </div>
 
       <div className="shell-header-center">

@@ -1,7 +1,7 @@
 .shell-header {
-  height: 70px;
-  min-height: 70px;
-  max-height: 70px;
+  height: 75px;
+  min-height: 75px;
+  max-height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;

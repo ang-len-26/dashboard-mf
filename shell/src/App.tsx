@@ -1,4 +1,4 @@
-import "./theme.css";
+import "./styles/theme.css";
 import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
 
