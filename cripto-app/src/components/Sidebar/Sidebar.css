@@ -1,9 +1,8 @@
 /* Sidebar base */
 .sidebar {
   position: fixed;
-  top: 76px;
   left: 0;
-  height: calc(100vh - 76px); /* resta el header fijo */
+  height: 100vh;
   background-color: var(--card-bg);
   color: var(--text);
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);

@@ -1,5 +1,9 @@
 .shell-header {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   height: 75px;
   min-height: 75px;
   max-height: 75px;
@@ -11,7 +15,7 @@
   color: var(--text);
   gap: 1.5rem;
   border-bottom: 1px solid var(--hover);
-   z-index: 1002;
+  z-index: 1002;
 }
 
 .shell-header-title {
@@ -45,3 +49,18 @@
   --logo-filter: brightness(1.2);
 }
 
+
+@media (max-width: 768px) {
+  .shell-header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .shell-header-center,
+  .shell-header-right {
+    justify-content: center;
+    width: 100%;
+  }
+}

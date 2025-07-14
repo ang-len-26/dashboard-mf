@@ -90,6 +90,14 @@
   background-color: #aaa;
 }
 
+.dashboard-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: space-evenly; /* o center o start */
+}
+
 .dashboard-wrapper.blurred .dashboard-content {
   filter: blur(3px);
   transition: filter 0.3s ease;
