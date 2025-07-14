@@ -1,102 +1,132 @@
-/* === Contenedor principal === */
 .weather-header {
+  position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1rem;
 }
 
-/* === Controles === */
-.card-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: center;
-  height: 140px;
-}
-
-.card-controls button {
-  background: rgba(255, 255, 255, 0.2);
+.nav-button {
+  position: relative;
+  top: 50px;
+  transform: translateY(-50%);
+  background: rgba(34, 29, 29, 0.279);
   border: none;
-  padding: 0.5rem;
   border-radius: 50%;
+  padding: 0.5rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.3s ease;
+  z-index: 2;
+  display: none;
 }
 
-.card-controls button:hover {
-  background: rgba(255, 255, 255, 0.4);
+.weather-header:hover .nav-button {
+  display: block;
+}
+
+.left-button {
+  left: 0;
+}
+
+.right-button {
+  right: 0;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.nav-icon:hover {
+  transform: scale(1.3);
 }
 
 /* === Contenedor de la tarjeta === */
-.weather-card-container {
-  width: 100%;
-  max-width: 400px;
-}
-
-/* === Tarjeta === */
 .weather-card {
-  width: 200px;
-  height: 140px;
+  width: 300px;
+  height: 75px; /* nuevo alto base */
   background-size: cover;
   background-position: center;
   color: white;
   border-radius: 12px;
-  padding: 1rem;
-  position: relative;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   transition: all 0.3s ease;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .weather-card.expanded {
-  width: 460px; /* Se expande lateralmente */
-  height: 140px; /* No cambia de altura */
-  flex-direction: row;
+  height: auto; /* solo se expande verticalmente si se necesita */
+  flex-direction: column;
   align-items: flex-start;
 }
 
-/* === Encabezado de la tarjeta === */
 .card-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-/* === Valor principal === */
-.card-value {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-/* === Botón de más detalles === */
+.card-value {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
 .details-button {
   background: rgba(255, 255, 255, 0.2);
   color: white;
   border: none;
-  padding: 0.4rem 0.8rem;
+  padding: 0.3rem 0.7rem;
   border-radius: 0.5rem;
+  font-size: 0.75rem;
   cursor: pointer;
-  transition: background 0.2s ease;
-  align-self: flex-end;
-  font-size: 0.8rem;
-  margin-top: auto;
+  margin-left: auto;
 }
 
 .details-button:hover {
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(74, 74, 74, 0.134);
 }
 
-/* === Contenido expandido === */
-.card-details {
-   padding-left: 1rem;
-  font-size: 0.95rem;
-  line-height: 1.4;
+.collapse-button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  transition: background 0.2s ease;
+  align-self: flex-end;
 }
+
+.collapse-button:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.card-details {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 0 0 1rem;
+  font-size: 0.85rem;
+  color: white;
+}
+
 /* === Botón de expansión/collapsado === */
 .expand-btn {
   background: none;
@@ -113,26 +143,6 @@
   justify-content: space-between;
 }
 
-/* === Estilo para los íconos generales de las tarjetas === */
-.icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  filter: invert(1); /* Asegura visibilidad si el fondo es oscuro */
-}
-
-/* === Estilo para los íconos de navegación (prev, next, expand/collapse) === */
-.nav-icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-}
-
-.nav-icon:hover {
-  transform: scale(1.1);
-}
 
 /* === Fondos por tipo de tarjeta === */
 .bg-sun {

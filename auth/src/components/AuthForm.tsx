@@ -8,11 +8,7 @@ const AuthForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const success = await loginUser({ username, password });
-    if (success) {
-      alert("Login exitoso");
-    } else {
-      alert("Credenciales incorrectas");
-    }
+    alert(success ? "Login exitoso" : "Credenciales incorrectas");
   };
 
   return (

@@ -11,9 +11,7 @@ const Dashboard = () => {
       <Suspense fallback={<p>Cargando módulo de criptomonedas...</p>}>
         <ErrorBoundary>
           <ThemeProvider>
-            <div className="dashboard-wrapper">
-              <CriptoApp />
-            </div>
+            <CriptoApp />
           </ThemeProvider>
         </ErrorBoundary>
       </Suspense>

@@ -4,7 +4,7 @@ export { default as TemperatureCard } from "./TemperatureCard";
 export { default as HumidityCard } from "./HumidityCard";
 export { default as VisibilityCard } from "./VisibilityCard";
 export { default as PrecipitationCard } from "./PrecipitationCard";
-// export { default as WindCard } from "./WindCard";
+export { default as WindCard } from "./WindCard";
 // export { default as PressureCard } from "./PressureCard";
 // export { default as UVIndexCard } from "./UVIndexCard";
 // export { default as SunriseCard } from "./SunriseCard";

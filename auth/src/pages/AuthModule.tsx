@@ -1,4 +1,5 @@
 import AuthForm from "../components/AuthForm";
+import "../styles/auth.css";
 
 const AuthModule = () => {
   return (

@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="shell-header">
       <div className="shell-header-title">
-        <img src={logo} alt="Logo" style={{ height: "60px" }} />
+        <img src={logo} alt="Logo" style={{ height: "66px" }} />
       </div>
 
       <div className="shell-header-center">

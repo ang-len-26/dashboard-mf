@@ -32,3 +32,14 @@ export interface WeatherLocation {
   name: string;
   country: string;
 }
+
+export type WeatherHourly = {
+  time: string;
+  temperature: number;
+  humidity: number;
+  visibility: number;
+  precipitation: number;
+  windspeed: number;
+  winddirection: number;
+  weathercode: number;
+};

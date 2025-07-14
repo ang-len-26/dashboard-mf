@@ -1,9 +1,9 @@
 /* Sidebar base */
 .sidebar {
   position: fixed;
-  top: 70px;
+  top: 76px;
   left: 0;
-  height: calc(100vh - 70px); /* resta el header fijo */
+  height: calc(100vh - 76px); /* resta el header fijo */
   background-color: var(--card-bg);
   color: var(--text);
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);

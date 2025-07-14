@@ -1,15 +1,14 @@
-// src/pages/Home.tsx
-
 import { useWeatherContext } from "../context/WeatherContext";
 import { useWeatherData } from "../context/WeatherDataContext";
-import ConditionCard from "../components/Cards/ConditionCard";
-import HumidityCard from "../components/Cards/HumidityCard";
-import PrecipitationCard from "../components/Cards/PrecipitationCard";
-import TemperatureCard from "../components/Cards/TemperatureCard";
-import VisibilityCard from "../components/Cards/VisibilityCard";
-import WindCard from "../components/Cards/WindCard.tsx";
-
-import { PrevIcon, NextIcon, ExpandIcon } from "../components/icons";
+import {
+  ConditionCard,
+  HumidityCard,
+  PrecipitationCard,
+  TemperatureCard,
+  VisibilityCard,
+  WindCard,
+} from "../components/Cards";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Home = () => {
   const { currentCard, nextCard, prevCard, isExpanded, toggleExpand } =
@@ -54,20 +53,27 @@ const Home = () => {
   ];
 
   return (
-    <div className={`weather-header ${isExpanded ? "expanded" : ""}`}>
-      <div className="card-controls">
-        <button onClick={prevCard} aria-label="Anterior">
-          <PrevIcon />
-        </button>
-        <button onClick={toggleExpand} aria-label="Ver más">
-          <ExpandIcon expanded={isExpanded} />
-        </button>
-        <button onClick={nextCard} aria-label="Siguiente">
-          <NextIcon />
-        </button>
-      </div>
+    <div className={`weather-header`}>
+      {/* Botón izquierdo */}
+      <button
+        onClick={prevCard}
+        className="nav-button left-button"
+        aria-label="Anterior"
+      >
+        <ChevronLeft className="nav-icon" />
+      </button>
 
+      {/* Tarjeta actual */}
       <div className="weather-card-container">{cards[currentCard]}</div>
+
+      {/* Botón derecho */}
+      <button
+        onClick={nextCard}
+        className="nav-button right-button"
+        aria-label="Siguiente"
+      >
+        <ChevronRight className="nav-icon" />
+      </button>
     </div>
   );
 };

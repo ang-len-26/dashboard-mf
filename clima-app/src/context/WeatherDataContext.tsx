@@ -1,57 +1,53 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  ReactNode,
-} from "react";
-import { fetchWeather } from "../services/weatherService";
-import { WeatherData } from "../types/weather";
+import { createContext, useContext, useEffect, useState } from "react";
+import { WeatherData, WeatherHourly } from "../types/weather";
+import { fetchWeatherFull } from "../services/fetchWeatherFull";
 
-interface WeatherDataContextProps {
+type WeatherDataContextType = {
   weatherData: WeatherData | null;
+  hourlyData: WeatherHourly[]; // <-- nuevo
   loading: boolean;
   error: string | null;
-}
+};
 
-const WeatherDataContext = createContext<WeatherDataContextProps | undefined>(
+const WeatherDataContext = createContext<WeatherDataContextType | undefined>(
   undefined
 );
 
-export const WeatherDataProvider = ({ children }: { children: ReactNode }) => {
+export const WeatherDataProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [hourlyData, setHourlyData] = useState<WeatherHourly[]>([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadWeather = async () => {
-      try {
-        const data = await fetchWeather();
-        setWeatherData(data);
-      } catch (err) {
-        console.error(err);
-        setError("No se pudo obtener el clima.");
-      } finally {
+    fetchWeatherFull()
+      .then(({ current, hourly }) => {
+        setWeatherData(current);
+        setHourlyData(hourly);
         setLoading(false);
-      }
-    };
-
-    loadWeather();
+      })
+      .catch((err) => {
+        setError(err.message || "Error al cargar el clima");
+        setLoading(false);
+      });
   }, []);
 
   return (
-    <WeatherDataContext.Provider value={{ weatherData, loading, error }}>
+    <WeatherDataContext.Provider
+      value={{ weatherData, hourlyData, loading, error }}
+    >
       {children}
     </WeatherDataContext.Provider>
   );
 };
 
-export const useWeatherData = (): WeatherDataContextProps => {
+export const useWeatherData = () => {
   const context = useContext(WeatherDataContext);
-  if (!context) {
-    throw new Error(
-      "useWeatherData debe usarse dentro de un WeatherDataProvider"
-    );
-  }
+  if (!context)
+    throw new Error("useWeatherData debe usarse dentro de WeatherDataProvider");
   return context;
 };
