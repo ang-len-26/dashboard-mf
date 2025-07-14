@@ -1,8 +1,8 @@
 .shell-dashboard {
-  padding: 2rem;
+  padding: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: calc(100vh - 70px); /* resta el header fijo */
+  min-height: 100vh;
   background-color: var(--bg);
 }

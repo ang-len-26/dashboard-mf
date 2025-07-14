@@ -9,7 +9,7 @@
   padding: 0 2rem;
   background-color: var(--card-bg);
   color: var(--text);
-  gap: 1rem;
+  gap: 1.5rem;
   border-bottom: 1px solid var(--hover);
    z-index: 1002;
 }

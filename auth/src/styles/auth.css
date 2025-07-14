@@ -42,6 +42,9 @@ body {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
   gap: 1rem;
   font-family: inherit;
+  flex-shrink: 1; /* ✨ Nuevo */
+  max-width: 360px; /* ✨ Limita su expansión lateral */
+  overflow: hidden; /* ✨ Previene desbordes */
 }
 
 .auth-container h2 {
@@ -63,8 +66,8 @@ body {
   border-radius: 0.5rem;
   padding: 0.35rem 0.75rem;
   font-size: 0.9rem;
-  color: var(--text);
-  max-width: 140px;
+  color: var(--text);	
+  max-width: 120px;
 }
 
 .auth-container input:focus {

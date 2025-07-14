@@ -45,7 +45,7 @@
 /* === Contenedor de la tarjeta === */
 .weather-card {
   width: 300px;
-  height: 75px; /* nuevo alto base */
+  max-height: 75px; /* nuevo alto base */
   background-size: cover;
   background-position: center;
   color: white;
@@ -53,9 +53,12 @@
   padding: 0.75rem 1rem;
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   align-items: center;
   transition: all 0.3s ease;
   overflow: hidden;
+  max-width: 260px; /* ✨ Limita el ancho de la tarjeta */
+  flex-shrink: 0;    /* ✨ Para que mantenga su forma */
 }
 
 .weather-card.expanded {
