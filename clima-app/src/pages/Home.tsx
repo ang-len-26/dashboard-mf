@@ -64,7 +64,7 @@ const Home = () => {
       </button>
 
       {/* Tarjeta actual */}
-      <div className="weather-card-container">{cards[currentCard]}</div>
+      <div className="weather-card">{cards[currentCard]}</div>
 
       {/* Botón derecho */}
       <button

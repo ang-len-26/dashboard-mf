@@ -33,15 +33,11 @@ const App = () => {
       <CryptoProvider>
         <CryptoMarketProvider>
           <CryptoDataProvider>
-            <div
-              className={`crypto-app-container ${theme}`}
-              style={{ display: "flex" }}
-            >
+            <div className={`crypto-app-container ${theme}`}>
               {/* Contenido desplazado dinámicamente */}
               <main
                 style={{
                   marginLeft: isSidebarExpanded ? "220px" : "60px",
-                  padding: "1rem",
                   flexGrow: 1,
                   transition: "margin-left 0.3s ease",
                 }}

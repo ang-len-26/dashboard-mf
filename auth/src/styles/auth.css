@@ -32,7 +32,7 @@ body {
 }
 
 .auth-container {
-  max-height: 75px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +43,7 @@ body {
   gap: 1rem;
   font-family: inherit;
   flex-shrink: 1; /* ✨ Nuevo */
-  max-width: 360px; /* ✨ Limita su expansión lateral */
+  max-width: 400px; /* ✨ Limita su expansión lateral */
   overflow: hidden; /* ✨ Previene desbordes */
 }
 

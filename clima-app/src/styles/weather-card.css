@@ -44,7 +44,8 @@
 
 /* === Contenedor de la tarjeta === */
 .weather-card {
-  width: 300px;
+  position: absolute;
+  width: 400px;
   max-height: 75px; /* nuevo alto base */
   background-size: cover;
   background-position: center;
