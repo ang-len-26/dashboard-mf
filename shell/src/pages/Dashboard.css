@@ -1,6 +1,5 @@
 .shell-dashboard {
   padding-top: 75px;
-  display: flex;
   min-height: 100vh;
   background-color: var(--bg);
 }

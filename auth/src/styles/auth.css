@@ -23,69 +23,67 @@
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: "Inter", sans-serif;
-  margin: 0;
-  padding: 0;
-  transition: background var(--transition), color var(--transition);
+  background-color: var(--bg); /* Fondo general basado en el tema (claro/oscuro) */
+  color: var(--text); /* Color de texto general */
+  font-family: "Inter", sans-serif; /* Fuente base para todo el sitio */
+  margin: 0; /* Eliminamos margen por defecto */
+  padding: 0; /* Eliminamos padding por defecto */
+  transition: background var(--transition), color var(--transition); /* Animación suave al cambiar fondo o color de texto */
 }
 
 .auth-container {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--card-bg); /* Usamos fondo tarjeta */
-  border-radius: 0.75rem;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-  gap: 1rem;
-  font-family: inherit;
-  flex-shrink: 1; /* ✨ Nuevo */
-  max-width: 400px; /* ✨ Limita su expansión lateral */
-  overflow: hidden; /* ✨ Previene desbordes */
+  height: 100%; /* Ocupa toda la altura del contenedor padre */
+  display: flex; /* Usamos Flexbox para centrar contenido */
+  align-items: center; /* Centramos verticalmente el contenido */
+  justify-content: center; /* Centramos horizontalmente el contenido */
+  background: var(--card-bg); /* Fondo de tarjeta, cambia según tema */
+  border-radius: 0.75rem; /* Bordes redondeados */
+  padding: 0.5rem 1rem; /* Espaciado interno arriba/abajo y a los lados */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); /* Sombra suave para destacar */
+  gap: 1rem; /* Separación entre elementos hijos */
+  font-family: inherit; /* Hereda la fuente del body */
+  overflow: hidden; /* Evita que el contenido se desborde del contenedor */
 }
 
 .auth-container h2 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-  color: var(--text);
+  font-size: 1rem; /* Tamaño del título */
+  font-weight: 600; /* Peso semi-bold */
+  margin: 0; /* Quitamos margen por defecto */
+  color: var(--text); /* Color de texto según el tema */
 }
 
 .auth-container form {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: flex; /* Flexbox para alinear elementos del formulario */
+  align-items: center; /* Centrado vertical */
+  gap: 0.5rem; /* Espacio entre los elementos del formulario */
 }
 
 .auth-container input {
-  background: var(--bg-secondary); /* Fondo secundario */
-  border: 1px solid var(--hover); /* Acento hover como borde */
-  border-radius: 0.5rem;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.9rem;
-  color: var(--text);	
-  max-width: 120px;
+  background: var(--bg-secondary); /* Fondo más suave o secundario */
+  border: 1px solid var(--hover); /* Borde con color hover (ligero) */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  padding: 0.35rem 0.75rem; /* Espaciado interno */
+  font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  color: var(--text); /* Color del texto del input */
+  max-width: 120px; /* Limita el ancho del input */
 }
 
 .auth-container input:focus {
-  outline: none;
-  border-color: var(--accent); /* Color principal */
+  outline: none; /* Quitamos el borde azul del focus por defecto */
+  border-color: var(--accent); /* Cambia el color del borde al hacer focus */
 }
 
 .auth-container button {
-  background: var(--accent); /* Color principal */
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.4rem 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
+  background: var(--accent); /* Color de fondo del botón */
+  color: white; /* Texto blanco */
+  border: none; /* Sin bordes */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  padding: 0.4rem 0.9rem; /* Espaciado interno */
+  font-weight: 500; /* Texto semibold */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  transition: background 0.2s; /* Transición suave al cambiar color de fondo */
 }
 
 .auth-container button:hover {
-  background: var(--hover); /* Acento hover */
+  background: var(--hover); /* Color al pasar el mouse */
 }

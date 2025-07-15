@@ -1,13 +1,34 @@
-import React, { Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import ErrorBoundary from "./ErrorBoundary";
 import { ThemeToggle } from "./ThemeToggle";
 import logo from "../assets/logo.png";
+import { loadRemote } from "../utils/loadRemote";
 import "./Header.css";
 
-const ClimaApp = React.lazy(() => import("climaApp/App"));
-const AuthApp = React.lazy(() => import("authApp/AuthModule"));
-
 const Header = () => {
+  const [ClimaApp, setClimaApp] = useState<React.ComponentType | null>(null);
+  const [AuthApp, setAuthApp] = useState<React.ComponentType | null>(null);
+
+  useEffect(() => {
+    const loadApps = async () => {
+      const climaUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3001/remoteEntry.js"
+          : "https://clima-app-orpin.vercel.app/remoteEntry.js";
+
+      const authUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3003/remoteEntry.js"
+          : "https://auth-app-beta-seven.vercel.app/remoteEntry.js";
+
+      const Clima = await loadRemote(climaUrl, "climaApp", "./App");
+      const Auth = await loadRemote(authUrl, "authApp", "./AuthModule");
+      setClimaApp(() => Clima.default);
+      setAuthApp(() => Auth.default);
+    };
+    loadApps();
+  }, []);
+
   return (
     <header className="shell-header">
       <div className="shell-header-title">
@@ -15,20 +36,24 @@ const Header = () => {
       </div>
 
       <div className="shell-header-center">
-        <Suspense fallback={<div>Cargando clima...</div>}>
+        {ClimaApp ? (
           <ErrorBoundary>
             <ClimaApp />
           </ErrorBoundary>
-        </Suspense>
+        ) : (
+          <div>Cargando clima...</div>
+        )}
       </div>
 
       <div className="shell-header-right">
         <ThemeToggle />
-        <Suspense fallback={<div>Cargando usuario...</div>}>
+        {AuthApp ? (
           <ErrorBoundary>
             <AuthApp />
           </ErrorBoundary>
-        </Suspense>
+        ) : (
+          <div>Cargando usuario...</div>
+        )}
       </div>
     </header>
   );

@@ -1,0 +1,85 @@
+.theme-toggle-btn {
+  background: var(--accent);
+  border: none;
+  border-radius: 9999px;
+  padding: 0.4rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, box-shadow 0.4s;
+  width: 50px;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-btn:hover {
+  box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+}
+
+.icon-wrapper {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+  color: white;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+}
+
+/* ☀️ Sun icon visible por defecto */
+.sun-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 🌙 Moon icon oculto inicialmente */
+.moon-icon {
+  opacity: 0;
+  transform: scale(0.8);
+  position: absolute;
+}
+
+/* Al activar dark mode */
+.toggle-on .sun-icon {
+  opacity: 0;
+  transform: scale(0.8);
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+.toggle-on .moon-icon {
+  opacity: 1;
+  transform: scale(1);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+/* Efecto al hacer hover cuando está activo */
+.theme-toggle-btn.toggle-on:hover {
+  box-shadow: 0 0 10px var(--hover), 0 0 20px var(--hover);
+}
+
+.scale-effect {
+  animation: scalePop 0.2s forwards;
+}
+
+@keyframes scalePop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

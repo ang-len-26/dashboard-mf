@@ -23,64 +23,59 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Contenedor principal del microfrontend */
+/* === Contenedor principal del microfrontend === */
 .crypto-app-container {
-  left: 0;
-  right: 0;
-  display: flex;
-  min-height: 100vh;
-  transition: background-color 0.3s ease;
+  left: 0; /* Alinea al borde izquierdo si se usa con posición relativa/absoluta */
+  right: 0; /* Alinea al borde derecho */
+  display: flex; /* Flex para layout interno (por ejemplo, sidebar + contenido) */
+  min-height: 100vh; /* Altura mínima pantalla completa */
+  transition: background-color 0.3s ease; /* Transición suave del fondo al cambiar tema */
 }
 
-/* Header con toggle */
+/* === Header del microfrontend con botón de toggle === */
 .crypto-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
+  display: flex; /* Flex para alinear elementos internos horizontalmente */
+  justify-content: space-between; /* Distribuye elementos a extremos */
+  align-items: center; /* Centra verticalmente */
+  padding: 0.8rem; /* Espaciado interno */
+  margin-bottom: 1rem; /* Separación inferior del contenido siguiente */
 }
 
+/* === Botón para cambiar tema (oscuro/claro) === */
 .theme-toggle {
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 0.4rem 0.8rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background 0.3s;
+  background: var(--accent); /* Color de acento definido en variables */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 0.4rem 0.8rem; /* Espaciado interno */
+  font-size: 1.2rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor de clic */
+  transition: background 0.3s; /* Transición al hacer hover */
 }
 
 .theme-toggle:hover {
-  background: var(--hover);
+  background: var(--hover); /* Cambia el fondo al color de hover */
 }
 
+/* === Contenedor general del contenido del microfrontend === */
 .crypto-app {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fa;
-  min-height: 100vh;
-  padding: 1rem;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente base */
+  background-color: #f5f7fa; /* Fondo claro */
+  min-height: 100vh; /* Altura mínima pantalla completa */
+  padding: 1rem; /* Espaciado interno */
+  color: #333; /* Color de texto */
 }
 
+/* === Título principal (h1) === */
 h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
+  text-align: center; /* Centrado horizontal */
+  margin-bottom: 1.5rem; /* Separación inferior */
 }
 
-
+/* === Contenedor del dashboard completo (incluye sidebar y contenido) === */
 .dashboard-wrapper {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  min-height: 100vh;
+  width: 100%; /* Ancho completo */
+  min-height: 100vh; /* Altura pantalla completa */
 }
 
-.dashboard-content {
-  flex-grow: 1;
-  padding: 1rem;
-  overflow-y: auto;
-  transition: margin-left 0.3s ease;
-}
 

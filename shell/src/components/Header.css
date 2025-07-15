@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 75px;
-  min-height: 75px;
-  max-height: 75px;
+  height: 80px;
+  min-height: 80px;
+  max-height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,6 @@
 }
 
 .shell-header-right {
-  width: 650px;
   display: flex;
   align-items: center;
   gap: 1rem;

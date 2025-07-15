@@ -1,20 +1,36 @@
-import React, { Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import ErrorBoundary from "../components/ErrorBoundary";
 import { ThemeProvider } from "../context/ThemeContext";
+import { loadRemote } from "../utils/loadRemote";
 import "./Dashboard.css";
 
-const CriptoApp = React.lazy(() => import("criptoApp/App"));
-
 const Dashboard = () => {
+  const [CriptoApp, setCriptoApp] = useState<React.ComponentType | null>(null);
+
+  useEffect(() => {
+    const loadApp = async () => {
+      const criptoUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3002/remoteEntry.js"
+          : "https://cripto-app-six.vercel.app/remoteEntry.js";
+
+      const Cripto = await loadRemote(criptoUrl, "criptoApp", "./App");
+      setCriptoApp(() => Cripto.default);
+    };
+    loadApp();
+  }, []);
+
   return (
     <main className="shell-dashboard">
-      <Suspense fallback={<p>Cargando módulo de criptomonedas...</p>}>
-        <ErrorBoundary>
-          <ThemeProvider>
+      <ThemeProvider>
+        {CriptoApp ? (
+          <ErrorBoundary>
             <CriptoApp />
-          </ThemeProvider>
-        </ErrorBoundary>
-      </Suspense>
+          </ErrorBoundary>
+        ) : (
+          <p>Cargando módulo de criptomonedas...</p>
+        )}
+      </ThemeProvider>
     </main>
   );
 };

@@ -57,7 +57,7 @@ const CriptoDashboard = ({
           activeSection={activeSection}
           onSelectSection={(id) => setActiveSection(id)}
         />
-        <div className="dashboard-content">{renderMainSection()}</div>
+        <div>{renderMainSection()}</div>
       </div>
 
       {isModalSection && renderModal()}

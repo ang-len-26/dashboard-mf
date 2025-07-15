@@ -66,7 +66,14 @@ const ConditionCard = ({ isExpanded, onMoreDetails }: Props) => {
           Este dato proviene del código meteorológico más reciente.
         </p>
       ) : (
-        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "0.5rem",
+            flexWrap: "wrap",
+            marginTop: "0.5rem",
+          }}
+        >
           {upcomingHours.map((item, i) => {
             const code = item.weathercode;
             const condition = weatherCodeMap[code]?.label ?? "Desconocido";
