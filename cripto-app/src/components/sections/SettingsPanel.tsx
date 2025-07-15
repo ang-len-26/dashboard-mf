@@ -19,7 +19,7 @@ const SettingsPanel = ({ onClose }: { onClose: () => void }) => {
       <div className="modalContent settings-modal">
         <div className="modal-header">
           <h2>⚙️ Configuración</h2>
-          <button className="close-btn" onClick={onClose}>
+          <button className="btn-close" onClick={onClose}>
             ✖
           </button>
         </div>
@@ -48,13 +48,6 @@ const SettingsPanel = ({ onClose }: { onClose: () => void }) => {
           </select>
         </div>
 
-        <div className="modal-section">
-          <label>Tema visual:</label>
-          <p style={{ fontStyle: "italic", color: "gray" }}>
-            Esta opción se gestiona globalmente desde el Shell.
-          </p>
-        </div>
-
         <div className="modal-actions">
           <button
             className="btn-apply"
@@ -65,10 +58,6 @@ const SettingsPanel = ({ onClose }: { onClose: () => void }) => {
             }}
           >
             Guardar cambios
-          </button>
-
-          <button className="btn-close" onClick={onClose}>
-            Cerrar
           </button>
         </div>
       </div>

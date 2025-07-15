@@ -1,14 +1,3 @@
-.section-container {
-  padding: 1rem;
-}
-
-.top-controls {
-  margin-bottom: 1rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
 .crypto-list {
   list-style: none;
   padding: 0;
@@ -57,11 +46,15 @@
   border: 1px solid #ccc;
 }
 
-.modal-actions {
+.section-container {
+  padding: 1rem;
+}
+
+.top-controls {
+  margin-bottom: 1rem;
   display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 1rem;
+  align-items: center;
 }
 
 .btn-apply {
@@ -114,6 +107,13 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .modalContent {

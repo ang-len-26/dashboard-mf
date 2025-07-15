@@ -14,15 +14,33 @@ import {
 const CryptoDashboard = () => {
   return (
     <div className="chart-grid">
-      <CryptoScatterChart />
-      <CryptoMixedChart />
-      <CryptoLineChart />
-      <CryptoBubbleChart />
-      <CryptoRadarChart />
-      <CryptoPieChart />
-      <CryptoPolarChart />
-      <CryptoDoughnutChart />
-      <CryptoBarChart />
+      <div className="col-span-8">
+        <CryptoMixedChart />
+      </div>
+      <div className="col-span-4">
+        <CryptoPieChart />
+      </div>
+      <div className="col-span-3">
+        <CryptoRadarChart />
+      </div>
+      <div className="col-span-3">
+        <CryptoPolarChart />
+      </div>
+      <div className="col-span-6">
+        <CryptoScatterChart />
+      </div>
+      <div className="col-span-4">
+        <CryptoDoughnutChart />
+      </div>
+      <div className="col-span-8">
+        <CryptoBarChart />
+      </div>
+      {/* <div className="col-span-4">
+        <CryptoLineChart />
+      </div>
+      <div className="col-span-4">
+        <CryptoBubbleChart />
+      </div> */}
     </div>
   );
 };

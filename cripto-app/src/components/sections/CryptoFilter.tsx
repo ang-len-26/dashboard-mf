@@ -7,7 +7,12 @@ const CryptoFilter = ({ onClose }: { onClose: () => void }) => {
   return (
     <div className="modal" role="dialog" aria-modal="true">
       <div className="modalContent">
-        <h3>Filtros</h3>
+        <div className="modal-header">
+          <h2>Filtros</h2>
+          <button className="btn-close" onClick={onClose}>
+            ✖
+          </button>
+        </div>
 
         <label>Criptomoneda:</label>
         <select value={crypto} onChange={(e) => setCrypto(e.target.value)}>
@@ -48,14 +53,6 @@ const CryptoFilter = ({ onClose }: { onClose: () => void }) => {
             className="btn-apply"
           >
             Aplicar filtros
-          </button>
-
-          <button
-            onClick={onClose}
-            style={{ marginTop: "1rem" }}
-            className="btn-close"
-          >
-            Cerrar
           </button>
         </div>
       </div>

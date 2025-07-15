@@ -2,9 +2,30 @@
 
 .chart-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(12, 1fr); 
   gap: 1.5rem;
   padding: 1rem;
+}
+
+/* Cartas que ocupan 3 columnas */
+.col-span-3 {
+  grid-column: span 3;
+}
+/* Cartas que ocupan 4 columnas */
+.col-span-4 {
+  grid-column: span 4;
+}
+/* Cartas que ocupan 6 columnas (media fila) */
+.col-span-6 {
+  grid-column: span 6;
+}
+/* Cartas que ocupan 8 columnas */
+.col-span-8 {
+  grid-column: span 8;
+}
+/* Cartas que ocupan 12 columnas (fila completa) */
+.col-span-12 {
+  grid-column: span 12;
 }
 
 .chart-card {
@@ -14,7 +35,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   padding: 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 350px;
+  height: 300px;
   overflow: hidden;
   position: relative;
 }

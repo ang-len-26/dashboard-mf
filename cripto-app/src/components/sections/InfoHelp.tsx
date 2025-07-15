@@ -6,7 +6,7 @@ const InfoHelp = ({ onClose }: { onClose: () => void }) => {
       <div className="modalContent info-help-modal">
         <div className="modal-header">
           <h2>ℹ️ Información General</h2>
-          <button className="close-btn" onClick={onClose}>
+          <button className="btn-close" onClick={onClose}>
             ✖
           </button>
         </div>
@@ -81,10 +81,6 @@ const InfoHelp = ({ onClose }: { onClose: () => void }) => {
             </li>
           </ul>
         </div>
-
-        <button className="close-btn-bottom" onClick={onClose}>
-          Cerrar
-        </button>
       </div>
     </div>
   );
